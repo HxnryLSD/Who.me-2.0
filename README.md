@@ -1,70 +1,220 @@
-# Who.Me Dashboard
+# Who.Me 2.0 🚀
 
-Ein modernes, personalisiertes Dashboard für Browser, das als Ersatz für die Standard-Startseite dient.
+<p align="center">
+  <strong>Dein persönliches Dashboard – überall und auf jedem Gerät.</strong>
+</p>
 
-## Features
+<p align="center">
+  <img src="https://img.shields.io/badge/React-18-61DAFB?logo=react" alt="React 18">
+  <img src="https://img.shields.io/badge/Vite-5-646CFF?logo=vite" alt="Vite">
+  <img src="https://img.shields.io/badge/Tailwind_CSS-3-38B2AC?logo=tailwindcss" alt="Tailwind CSS">
+  <img src="https://img.shields.io/badge/Node.js-18+-339933?logo=nodedotjs" alt="Node.js">
+  <img src="https://img.shields.io/badge/MongoDB-6+-47A248?logo=mongodb" alt="MongoDB">
+</p>
 
-- 📌 **Widget-basierte Organisation**: Lesezeichen, To-Do-Listen, Notizen, RSS-Feeds und mehr
-- 🎨 **Vollständig anpassbar**: Hintergründe, Farben, Dark Mode
-- 🔄 **Drag & Drop**: Intuitive Anordnung aller Widgets
-- 📱 **Responsive**: Funktioniert auf Desktop, Tablet und Mobile
-- 💾 **LocalStorage**: Alle Daten werden lokal im Browser gespeichert
-- 📥 **Import/Export**: Backup und Migration Ihrer Daten
-- 🌐 **Browser-Lesezeichen Import**: Importieren Sie Ihre Lesezeichen aus Chrome, Firefox, Edge
+---
 
-## Installation
+## 🌟 Was ist Who.Me?
+
+Who.Me ist ein **cloud-basierter Dienst**, der die Standard-Startseite des Browsers in ein vollständig personalisierbares Dashboard verwandelt. Es dient als zentrale Kommandozentrale für das Web – geräte- und browserübergreifend synchronisiert.
+
+> **Der Hauptvorteil:** Totale Unabhängigkeit. Da der Dienst in der Cloud läuft, sieht deine Startseite auf dem Arbeits-PC (Chrome), dem Heim-Laptop (Firefox) und dem Tablet (Safari) identisch aus.
+
+---
+
+## ✨ Features
+
+### 📌 Widget-basiertes Dashboard
+| Widget | Beschreibung |
+|--------|--------------|
+| **Bookmark Widget** | Einzelne Links mit Favicon, Screenshot-Vorschau & QR-Code |
+| **Bookmark List** | Sortierbare Listen mit Drag & Drop, Tags & Kategorien |
+| **Todo Widget** | Aufgabenlisten mit Checkboxen |
+| **Note Widget** | Sticky Notes für schnelle Gedanken |
+| **Clock Widget** | Weltzeituhr für verschiedene Zeitzonen |
+| **Weather Widget** | Wettervorhersage |
+| **RSS Widget** | Nachrichten-Feed Reader |
+
+### 🎨 Personalisierung & Design
+- **Hintergründe:** Eigene Bilder, kuratierte Galerien oder einfache Farben
+- **Layout:** Anpassbare Spaltenanzahl & Widget-Transparenz
+- **Themes:** Vordefinierte Theme-Presets (Ocean, Forest, Sunset, etc.)
+- **Glassmorphism:** Moderner glassmorphism-Style für Widgets
+- **Dark/Light Mode:** Automatisch oder manuell umschaltbar
+- **Fonts:** Verschiedene Schriftarten zur Auswahl
+
+### 🔄 Synchronisation & Multi-Device
+- **Cloud Sync:** Echtzeit-Synchronisation zwischen allen Geräten
+- **Multi-User System:** Benutzer-Authentifizierung mit Login/Registrierung
+- **Automatische Backups:** Regelmäßige Auto-Backups mit Versionshistorie
+- **Konfliktlösung:** Intelligente Conflict Resolution bei Sync-Konflikten
+- **Öffentliche Profile:** Dashboards können öffentlich geteilt werden
+
+### 📱 Responsive & PWA
+- **Mobile-optimiert:** Funktioniert auf Desktop, Tablet und Smartphone
+- **Progressive Web App:** Installierbar auf allen Geräten
+- **Offline-Modus:** Service Worker für Offline-Funktionalität
+- **Pull-to-Refresh:** Native mobile Gesten-Unterstützung
+
+### 📥 Import & Export
+- **Browser-Import:** Lesezeichen aus Chrome, Firefox, Edge importieren
+- **JSON Export/Import:** Vollständiges Backup & Migration
+- **HTML Bookmarks:** Standard-HTML-Bookmark-Dateien
+
+---
+
+## 🛠️ Tech Stack
+
+### Frontend
+| Technologie | Verwendung |
+|-------------|------------|
+| React 18 | UI Framework |
+| Vite 5 | Build Tool & Dev Server |
+| Tailwind CSS | Styling |
+| react-grid-layout | Drag & Drop Grid |
+| Lucide React | Icons |
+| date-fns | Datums-Formatierung |
+
+### Backend
+| Technologie | Verwendung |
+|-------------|------------|
+| Node.js | Runtime |
+| Express | Web Framework |
+| MongoDB | Datenbank |
+| Mongoose | ODM |
+| JWT | Authentifizierung |
+| bcryptjs | Password Hashing |
+
+---
+
+## 🚀 Schnellstart
+
+### Voraussetzungen
+- **Node.js** v18 oder höher
+- **MongoDB** (lokal oder [MongoDB Atlas](https://www.mongodb.com/cloud/atlas))
+- **Git**
+
+### Installation
 
 ```bash
-# Dependencies installieren
+# Repository klonen
+git clone <repository-url>
+cd who.me-2.0
+
+# Frontend-Dependencies installieren
 npm install
 
-# Development Server starten
-npm run dev
-
-# Production Build erstellen
-npm run build
+# Backend-Dependencies installieren
+cd backend
+npm install
+cd ..
 ```
 
-## Verwendung
+### Konfiguration
 
-1. Öffnen Sie `http://localhost:3000` nach dem Start des Dev-Servers
-2. Klicken Sie auf das **+** Icon, um ein neues Widget hinzuzufügen
-3. Wählen Sie einen Widget-Typ und konfigurieren Sie es
-4. Verschieben Sie Widgets per Drag & Drop
-5. Ändern Sie die Größe durch Ziehen an den Ecken
+1. **Backend konfigurieren** (`backend/.env`):
+```env
+PORT=5000
+MONGODB_URI=mongodb://localhost:27017/whome-dashboard
+JWT_SECRET=dein-super-geheimer-schluessel-mindestens-32-zeichen
+NODE_ENV=development
+CORS_ORIGIN=http://localhost:5173
+```
 
-## Widget-Typen
+2. **Frontend konfigurieren** (`.env`):
+```env
+VITE_API_URL=http://localhost:5000/api
+```
 
-- **Lesezeichen-Liste**: Verwalten Sie Ihre wichtigsten Links
-- **Aufgabenliste**: To-Do-Listen mit Checkboxen
-- **Notizen**: Haftnotizen für schnelle Gedanken
-- **Uhr**: Weltzeituhr für verschiedene Zeitzonen
-- **Wetter**: Wettervorhersage (Demo-Daten)
-- **RSS-Feed**: Nachrichten-Feed Reader (Demo)
+### Starten
 
-## Technologien
+```bash
+# Terminal 1: Backend starten
+cd backend
+npm run dev
 
-- React 18
-- Vite
-- Tailwind CSS
-- react-grid-layout
-- lucide-react (Icons)
-- date-fns (Datums-Formatierung)
+# Terminal 2: Frontend starten
+npm run dev
+```
 
-## Browser als Startseite einrichten
+🌐 Öffne **http://localhost:5173** im Browser
+
+> 📖 **Detaillierte Anleitung:** Siehe [SETUP.md](SETUP.md) für eine vollständige Schritt-für-Schritt-Anleitung inkl. MongoDB Atlas Setup.
+
+---
+
+## 📁 Projektstruktur
+
+```
+who.me-2.0/
+├── src/                    # Frontend Source
+│   ├── components/         # React Komponenten
+│   │   └── widgets/        # Widget-Komponenten
+│   ├── contexts/           # React Contexts (Auth, Sync)
+│   ├── hooks/              # Custom Hooks
+│   ├── pages/              # Seiten-Komponenten
+│   ├── services/           # API Services
+│   └── utils/              # Helper & Konstanten
+├── backend/                # Backend API
+│   ├── config/             # DB-Konfiguration
+│   ├── controllers/        # Route Handler
+│   ├── middleware/         # Auth Middleware
+│   ├── models/             # Mongoose Models
+│   └── routes/             # API Routes
+└── public/                 # Statische Dateien
+```
+
+---
+
+## 🌐 Als Browser-Startseite einrichten
 
 ### Chrome
-1. Einstellungen → Beim Start → Bestimmte Seite öffnen
-2. URL eingeben: `http://localhost:3000` (Dev) oder Ihre gehostete URL
+Einstellungen → Beim Start → **Bestimmte Seite öffnen** → URL eingeben
 
 ### Firefox
-1. Einstellungen → Startseite → Benutzerdefinierte Adressen
-2. URL eingeben: `http://localhost:3000` (Dev) oder Ihre gehostete URL
+Einstellungen → Startseite → **Benutzerdefinierte Adressen** → URL eingeben
 
 ### Edge
-1. Einstellungen → Start, Startseite und neue Tabs → Diese Seiten öffnen
-2. URL eingeben: `http://localhost:3000` (Dev) oder Ihre gehostete URL
+Einstellungen → Start, Startseite und neue Tabs → **Diese Seiten öffnen** → URL eingeben
 
-## Lizenz
+---
 
-MIT
+## 📚 Dokumentation
+
+| Dokument | Beschreibung |
+|----------|--------------|
+| [SETUP.md](SETUP.md) | Detaillierte Installations- und Setup-Anleitung |
+| [PLANS.md](PLANS.md) | Entwicklungsplan & Feature-Roadmap |
+| [SystemContext.md](SystemContext.md) | Architektur-Übersicht & Konzepte |
+| [backend/README.md](backend/README.md) | Backend API Dokumentation |
+
+---
+
+## 🗺️ Roadmap
+
+Siehe [PLANS.md](PLANS.md) für die vollständige Feature-Roadmap. Highlights:
+
+- [ ] Keyboard Shortcuts
+- [ ] Global Search über alle Widgets
+- [ ] Weitere Widgets: Kalender, Pomodoro, Spotify, GitHub, etc.
+- [ ] Browser Extension für Quick-Add
+- [ ] TypeScript Migration
+- [ ] Docker Support
+
+---
+
+## 🤝 Contributing
+
+Beiträge sind willkommen! Bitte lies zuerst [PLANS.md](PLANS.md) um zu sehen, welche Features geplant sind.
+
+---
+
+## 📄 Lizenz
+
+MIT License – siehe [LICENSE](LICENSE) für Details.
+
+---
+
+<p align="center">
+  <strong>Made with ❤️ for a better browsing experience</strong>
+</p>
